@@ -1,15 +1,58 @@
 <script lang="ts">
+
+    import gsap from 'gsap';
+
+
+    export default {
+        data(){
+            return {
+                parkInfo: ''
+            }
+        },
+        methods: {
+            parkInfoFunc(){
+                gsap.to('.title', {y: -150, duration: 0.5})
+                gsap.fromTo('.info', {opacity: 0}, {opacity: 1, duration: 0.5, delay: 0.5,})
+                this.parkInfo = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam nulla, tincidunt eget leo in, hendrerit ultricies mi. Mauris nec scelerisque leo. Donec sit amet pharetra orci. Nunc placerat hendrerit ex quis pellentesque. Quisque in fringilla felis, id accumsan metus. Pellentesque gravida nulla id elementum ornare. Phasellus luctus dignissim ornare. Sed nec euismod urna. Nullam quis erat ultricies, dictum orci at, dictum mauris. Curabitur condimentum tincidunt nulla eu fermentum.'
+       
+            },
+            projectInfoFunc(){
+                gsap.to('.title', {y: -150, duration: 0.5})
+                gsap.fromTo('.info', {opacity: 0}, {opacity: 1, duration: 0.5, delay: 0.5})
+                this.parkInfo = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam nulla.'
+       
+            },
+            authorInfoFunc(){
+                gsap.to('.title', {y: -150, duration: 0.5})
+                gsap.fromTo('.info', {opacity: 0}, {opacity: 1, duration: 0.5, delay: 0.5})
+                this.parkInfo = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam nulla, tincidunt eget leo in, hendrerit ultricies mi. Mauris nec scelerisque leo. Donec sit amet pharetra orci. Nunc placerat hendrerit ex quis pellentesque. Quisque in fringilla felis, id accumsan metus. Pellentesque gravida nulla id elementum ornare. Phasellus luctus dignissim ornare. '
+       
+            }
+            
+        }
+    }
+    
+
 </script>
 
 <template lang="pug">
 .main
     .main_panel
-        .main_panel--title Park Krajobrazowy: Dolina Jezierzycy
+        .main_panel--title 
+            a.title Park Krajobrazowy: Dolina Jezierzycy
+            .info {{ parkInfo }} 
         .main_panel--nav
-            button Otwórz mapę
+            ul
+                li(@click="parkInfoFunc") O parku
+                li(@click="projectInfoFunc") O projekcie
+                li(@click="authorInfoFunc") O autorze
+            div
+                button Przejdź do mapy
 </template>
 
 <style scoped lang="scss">
+    $background: rgba(79, 178, 219, 0.8235);
+
     .main{
         width: 100vw;
         height: 100vh;
@@ -25,7 +68,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #069cdad2;
+            background-color: $background;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -35,6 +78,26 @@
                 width: 50%;
                 text-align: center;
                 font-size: 2.5vw;
+                text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                a{
+                    height: 60%;
+                    padding: 1%;
+                    display: flex;
+                    align-items: end;
+                }
+                .info{
+                    font-size: 1vw;
+                    padding-left: 5%;
+                    padding-right: 5%;
+                    margin: 0;
+                    height: 40%;
+                    position: relative;
+                    top: -150px;
+                }
                 
             }
 
@@ -44,17 +107,63 @@
                 display: flex;
                 text-align: center;
                 align-items: center;
+                flex-direction: column;
+                
 
-                button{ 
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 15%;
-                    height: 5%;
+                ul{
+                    width: 100%;
+                    height: 10%;
                     display: flex;
-                    flex-direction: column;
+                    margin: 0;
+                    padding: 0;
+                    flex-direction: row;
+                    color: white;
+                    list-style-type: none;
                     align-items: center;
-                    text-align: center;
+
+                    li{
+                        width: 33.3%;
+                        font-size: 2rem;
+                        text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
+                        cursor: pointer;
+
+                        &:hover{
+                            text-shadow: none;
+                            transition: text-shadow 0.3s ease-in-out;
+                        }
+                    }
                 }
+
+                div{
+
+                    width: 50%;
+                    height: 90%;
+                    display: flex;
+                    align-items: center;
+
+
+                    button{
+                        font-family: Ojuju; 
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 150px;
+                        height: auto;
+                        font-size: 1.3rem;
+                        padding: 2px;
+                        background-color: transparent;
+                        color: white;
+                        border: solid 2px white;
+                        text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
+                        cursor: pointer;
+
+                        &:hover{
+                            text-shadow: none;
+                            border-color: rgba(255, 255, 255, 0.562);
+                            transition: 0.3s ease-in-out;
+                        }
+                    }
+                }
+                
 
             }
         }

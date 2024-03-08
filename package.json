@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@arcgis/core": "^4.29.7",
+    "gsap": "^3.12.5",
     "vue": "^3.4.19"
   },
   "devDependencies": {

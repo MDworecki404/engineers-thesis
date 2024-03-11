@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
+import LandingPage from './components/LandingPage.vue'
 
-createApp(App).mount('#app')
+
+
+createApp(LandingPage).mount('#app')

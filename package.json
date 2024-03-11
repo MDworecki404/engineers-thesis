@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "@arcgis/core": "^4.29.7",
-    "vue": "^3.4.19"
+    "gsap": "^3.12.5",
+    "vue": "^3.4.19",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.25",
     "@vitejs/plugin-vue": "^5.0.4",
     "node-sass": "^9.0.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
+    "sass": "^1.71.1",
     "sass-loader": "^14.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",

@@ -47,7 +47,8 @@
                 li(@click="projectInfoFunc") O projekcie
                 li(@click="authorInfoFunc") O autorze
             div
-                button Przejdź do mapy
+                router-link(to='/map')
+                    button Przejdź do mapy
                             
 </template>
 

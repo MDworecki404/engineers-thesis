@@ -6,6 +6,5 @@ import esriConfig from '@arcgis/core/config'
 
 </script>
 <template lang="pug">
-b xd
 </template>
 <style scoped lang="scss"></style>

@@ -3,7 +3,7 @@ import displayMap from '../scripts/displayMap';
 import gsap from 'gsap';
 
 const coverAnimation = () =>{
-  gsap.to('.cover', {opacity: 0, duration: 2})
+  gsap.to('.cover', {opacity: 0, duration: 2, delay: 0.5})
   gsap.to('.cover', {visibility: 'hidden', delay: 2})
 }
 

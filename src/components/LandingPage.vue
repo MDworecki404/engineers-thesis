@@ -48,7 +48,6 @@
             div
                 router-link(to='/map')
                     button Przejdź do mapy
-                            
 </template>
 
 <style scoped lang="scss">
@@ -287,28 +286,37 @@
                     
 
 
-                    button{
-                        font-family: Ojuju; 
-                        margin-left: auto;
-                        margin-right: auto;
-                        width: 150px;
-                        height: auto;
-                        font-size: 1.3rem;
-                        padding: 2px;
-                        background-color: transparent;
-                        color: white;
-                        border: solid 2px white;
-                        text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
-                        cursor: pointer;
-                        position: relative;
-                        top: 120%;
+                    a{
+                        display: flex;
+                        position: absolute;
+                        bottom: 75px;
+                        align-items: center;
+                        text-align: center;
+                        left: calc(50vw - 75px);
+
+                        a:-webkit-any-link{
+                            text-decoration: none;
+                        }
+
+                        button{
+                            font-family: Ojuju; 
+                            width: 150px;
+                            height: auto;
+                            font-size: 1.3rem;
+                            padding: 2px;
+                            background-color: transparent;
+                            color: white;
+                            border: solid 2px white;
+                            text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
+                            cursor: pointer;
                         
 
-                        &:hover{
-                            text-shadow: none;
-                            border-color: rgba(255, 255, 255, 0.562);
-                            transition: 0.3s ease-in-out;
-                        }
+                            &:hover{
+                                text-shadow: none;
+                                border-color: rgba(255, 255, 255, 0.562);
+                                transition: 0.3s ease-in-out;
+                            }
+                    }
                     }
                 }
                 
@@ -416,36 +424,45 @@
 
                 div{
 
-                    width: 50%;
+                    width: 100%;
                     height: 90%;
                     display: flex;
                     align-items: center;
                     
 
+                    a{
+                        display: flex;
+                        position: absolute;
+                        bottom: 75px;
+                        align-items: center;
+                        text-align: center;
+                        left: calc(50vw - 75px);
 
-                    button{
-                        font-family: Ojuju; 
-                        margin-left: auto;
-                        margin-right: auto;
-                        width: 150px;
-                        height: auto;
-                        font-size: 1.3rem;
-                        padding: 2px;
-                        background-color: transparent;
-                        color: white;
-                        border: solid 2px white;
-                        text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
-                        cursor: pointer;
-                        position: relative;
-                        top: 120%;
+                        a:-webkit-any-link{
+                            text-decoration: none;
+                        }
+
+                        button{
+                            font-family: Ojuju; 
+                            width: 150px;
+                            height: auto;
+                            font-size: 1.3rem;
+                            padding: 2px;
+                            background-color: transparent;
+                            color: white;
+                            border: solid 2px white;
+                            text-shadow: 3px 4px 3px rgba(66, 68, 90, 1);
+                            cursor: pointer;
                         
 
-                        &:hover{
-                            text-shadow: none;
-                            border-color: rgba(255, 255, 255, 0.562);
-                            transition: 0.3s ease-in-out;
-                        }
+                            &:hover{
+                                text-shadow: none;
+                                border-color: rgba(255, 255, 255, 0.562);
+                                transition: 0.3s ease-in-out;
+                            }
                     }
+                    }
+                    
                 }
                 
 

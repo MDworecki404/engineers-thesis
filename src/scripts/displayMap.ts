@@ -2,6 +2,8 @@ import Map from '@arcgis/core/Map'
 import MapView from '@arcgis/core/views/MapView'
 import esriConfig from '@arcgis/core/config'
 import Polygon from '@arcgis/core/geometry/Polygon'
+import Compass from '@arcgis/core/widgets/Compass'
+
 
 esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
 
@@ -31,6 +33,14 @@ const displayMap = () => {
         ],
     })
     view.constraints.geometry = viewArea
+
+    const compass = new Compass({
+        view: view,
+    })
+    view.ui.add(compass, 'top-left')
+
+      
+
 }
 
 export default displayMap

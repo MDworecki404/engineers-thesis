@@ -3,6 +3,8 @@ import MapView from '@arcgis/core/views/MapView'
 import esriConfig from '@arcgis/core/config'
 import Polygon from '@arcgis/core/geometry/Polygon'
 import Compass from '@arcgis/core/widgets/Compass'
+import { parkArea } from './vectorLayers'
+import LayerList from '@arcgis/core/widgets/LayerList'
 
 
 esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
@@ -39,8 +41,20 @@ const displayMap = () => {
     })
     view.ui.add(compass, 'top-left')
 
-      
+    const loadFeature = async () => {
+        map.add(parkArea)
+        await 'loaded'
+    }
+    loadFeature()
 
+    let layerList = new LayerList({
+        view: view
+      });
+      // Adds widget below other elements in the top left corner of the view
+      view.ui.add(layerList, {
+        position: "top-right"
+      });
+      
 }
 
 export default displayMap

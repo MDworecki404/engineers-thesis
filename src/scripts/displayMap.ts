@@ -5,6 +5,7 @@ import Polygon from '@arcgis/core/geometry/Polygon'
 import Compass from '@arcgis/core/widgets/Compass'
 import { parkArea } from './vectorLayers'
 import LayerList from '@arcgis/core/widgets/LayerList'
+import GroupLayer from '@arcgis/core/layers/GroupLayer'
 
 
 esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
@@ -55,6 +56,12 @@ const displayMap = () => {
         position: "top-right"
       });
       
+      const groupLayer1 = new GroupLayer({
+        title: "My GroupLayer1",
+        layers: [parkArea]
+    })
+    map.add(groupLayer1)
+    
 }
 
 export default displayMap

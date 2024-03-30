@@ -38,7 +38,7 @@
 .main
     .main_panel
         .main_panel--title 
-            a.title Park Krajobrazowy: Dolina Jezierzycy
+            .title Park Krajobrazowy: Dolina Jezierzycy
             .info {{ parkInfo }} 
         .main_panel--nav
             ul

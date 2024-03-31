@@ -6,6 +6,7 @@ import Compass from '@arcgis/core/widgets/Compass'
 import { parkArea } from './vectorLayers'
 import LayerList from '@arcgis/core/widgets/LayerList'
 import GroupLayer from '@arcgis/core/layers/GroupLayer'
+import ScaleBar from '@arcgis/core/widgets/ScaleBar'
 
 
 esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
@@ -61,6 +62,13 @@ const displayMap = () => {
         layers: [parkArea]
     })
     map.add(groupLayer1)
+    const scaleBar = new ScaleBar({
+        view: view,
+        style: 'ruler',
+    })
+    view.ui.add(scaleBar, {
+        position: "bottom-right"
+    })
     
 }
 

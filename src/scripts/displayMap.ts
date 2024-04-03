@@ -4,6 +4,7 @@ import esriConfig from '@arcgis/core/config'
 import Polygon from '@arcgis/core/geometry/Polygon'
 import Compass from '@arcgis/core/widgets/Compass'
 import { parkArea } from './vectorLayers'
+import { routeL_K_M_D_T, routeS_W_W } from './bikeRoutes'
 import LayerList from '@arcgis/core/widgets/LayerList'
 import GroupLayer from '@arcgis/core/layers/GroupLayer'
 import ScaleBar from '@arcgis/core/widgets/ScaleBar'
@@ -11,10 +12,14 @@ import ScaleBar from '@arcgis/core/widgets/ScaleBar'
 
 esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
 
+
 const displayMap = () => {
+
     const map = new Map({
-        basemap: 'arcgis/imagery',
+        basemap: 'osm/hybrid',
     })
+    
+    
     const view = new MapView({
         map: map,
         container: 'map',
@@ -45,6 +50,8 @@ const displayMap = () => {
 
     const loadFeature = async () => {
         map.add(parkArea)
+        map.add(routeL_K_M_D_T)
+        map.add(routeS_W_W)
         await 'loaded'
     }
     loadFeature()
@@ -57,11 +64,11 @@ const displayMap = () => {
         position: "top-right"
       });
       
-      const groupLayer1 = new GroupLayer({
-        title: "My GroupLayer1",
-        layers: [parkArea]
+    const groupLayerRoutes = new GroupLayer({
+        title: "Trasy rowerowe",
+        layers: [routeL_K_M_D_T, routeS_W_W]
     })
-    map.add(groupLayer1)
+    map.add(groupLayerRoutes)
     const scaleBar = new ScaleBar({
         view: view,
         style: 'ruler',

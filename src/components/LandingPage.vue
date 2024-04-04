@@ -21,11 +21,12 @@
                 this.parkInfo = 'Projekt jest wynikiem pracy inżynierskiej i powstał w celach edukacyjnych.'
 
             },
-            authorInfoFunc(){
+            rulesInfoFunc(){
                 gsap.to('.title', {y: -150, duration: 0.5})
                 gsap.fromTo('.info', {opacity: 0, duration: 0.5}, {opacity: 1, duration: 0.5, delay: 0.5})
-                this.parkInfo = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam nulla, tincidunt eget leo in, hendrerit ultricies mi. Mauris nec scelerisque leo. Donec sit amet pharetra orci. Nunc placerat hendrerit ex quis pellentesque. Quisque in fringilla felis, id accumsan metus. Pellentesque gravida nulla id elementum ornare. Phasellus luctus dignissim ornare. '
-
+                this.parkInfo = `
+                    Nic tu jeszcze nie ma
+                `
             }
             
         }
@@ -44,7 +45,7 @@
             ul
                 li(@click="parkInfoFunc") O parku
                 li(@click="projectInfoFunc") O projekcie
-                li(@click="authorInfoFunc") O autorze
+                li(@click="rulesInfoFunc") Regulamin parku 
             div
                 router-link(to='/map')
                     button Przejdź do mapy

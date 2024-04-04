@@ -4,7 +4,7 @@ import esriConfig from '@arcgis/core/config'
 import Polygon from '@arcgis/core/geometry/Polygon'
 import Compass from '@arcgis/core/widgets/Compass'
 import { parkArea } from './vectorLayers'
-import { routeL_K_M_D_T, routeS_W_W } from './bikeRoutes'
+import { route123109, routeL_K_M_D_T, routeS_W_W, routeT_P_D_W, routeU_W } from './bikeRoutes'
 import LayerList from '@arcgis/core/widgets/LayerList'
 import GroupLayer from '@arcgis/core/layers/GroupLayer'
 import ScaleBar from '@arcgis/core/widgets/ScaleBar'
@@ -16,16 +16,15 @@ esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
 const displayMap = () => {
 
     const map = new Map({
-        basemap: 'osm/hybrid',
+        basemap: 'arcgis/midcentury'
     })
-    
     
     const view = new MapView({
         map: map,
         container: 'map',
-        zoom: 12,
+        zoom: 11,
         constraints: {
-        minZoom: 12,
+        minZoom: 11,
         maxZoom: 17,
         },
         center: [16.57109135732551, 51.35986770935379]
@@ -52,22 +51,25 @@ const displayMap = () => {
         map.add(parkArea)
         map.add(routeL_K_M_D_T)
         map.add(routeS_W_W)
+        map.add(routeT_P_D_W)
+        map.add(route123109)
+        map.add(routeU_W)
         await 'loaded'
     }
     loadFeature()
 
     let layerList = new LayerList({
         view: view,
-        listItemCreatedFunction: (event) => {
-            const item = event.item;
-            if (item.layer.type != "group") {
-              // don't show legend twice
-              item.panel = {
-                content: "legend",
-                open: true,
-              };
-            }
-        }
+        //listItemCreatedFunction: (event) => {
+        //    const item = event.item;
+        //    if (item.layer.type != "group") {
+        //      // don't show legend twice
+        //      item.panel = {
+        //        content: "legend",
+        //        open: true,
+        //      };
+        //    }
+        //}
       });
       // Adds widget below other elements in the top left corner of the view
       view.ui.add(layerList, {
@@ -76,7 +78,7 @@ const displayMap = () => {
       
     const groupLayerRoutes = new GroupLayer({
         title: "Trasy rowerowe",
-        layers: [routeL_K_M_D_T, routeS_W_W]
+        layers: [routeL_K_M_D_T, routeS_W_W, routeT_P_D_W, route123109, routeU_W]
     })
     map.add(groupLayerRoutes)
     const scaleBar = new ScaleBar({

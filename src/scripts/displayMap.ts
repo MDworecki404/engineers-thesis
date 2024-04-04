@@ -35,8 +35,8 @@ const displayMap = () => {
             [
             [16.440900, 51.440431],
             [16.652645, 51.440431],
-            [16.652645, 51.297039],
-            [16.440900, 51.297039],
+            [16.652645, 51.257039],
+            [16.440900, 51.257039],
             [16.440900, 51.440431]
             ]
         ],
@@ -57,7 +57,17 @@ const displayMap = () => {
     loadFeature()
 
     let layerList = new LayerList({
-        view: view
+        view: view,
+        listItemCreatedFunction: (event) => {
+            const item = event.item;
+            if (item.layer.type != "group") {
+              // don't show legend twice
+              item.panel = {
+                content: "legend",
+                open: true,
+              };
+            }
+        }
       });
       // Adds widget below other elements in the top left corner of the view
       view.ui.add(layerList, {

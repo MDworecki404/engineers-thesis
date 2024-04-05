@@ -1,7 +1,7 @@
 import Map from '@arcgis/core/Map'
 import MapView from '@arcgis/core/views/MapView'
 import esriConfig from '@arcgis/core/config'
-import Polygon from '@arcgis/core/geometry/Polygon'
+//import Polygon from '@arcgis/core/geometry/Polygon'
 import Compass from '@arcgis/core/widgets/Compass'
 import { parkArea } from './vectorLayers'
 import { route123109, routeL_K_M_D_T, routeS_W_W, routeT_P_D_W, routeU_W } from './bikeRoutes'
@@ -30,17 +30,17 @@ const displayMap = () => {
         },
         center: [16.57109135732551, 51.35986770935379]
     })
-    const viewArea = new Polygon({
-        rings: [
-            [
-            [16.440900, 51.440431],
-            [16.652645, 51.440431],
-            [16.652645, 51.257039],
-            [16.440900, 51.257039],
-            [16.440900, 51.440431]
-            ]
-        ],
-    })
+    //const viewArea = new Polygon({
+    //    rings: [
+    //        [
+    //        [16.440900, 51.440431],
+    //        [16.652645, 51.440431],
+    //        [16.652645, 51.257039],
+    //        [16.440900, 51.257039],
+    //        [16.440900, 51.440431]
+    //        ]
+    //    ],
+    //})
     //view.constraints.geometry = viewArea
 
     const compass = new Compass({

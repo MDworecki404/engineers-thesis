@@ -8,6 +8,7 @@ import { route123109, routeL_K_M_D_T, routeS_W_W, routeT_P_D_W, routeU_W } from 
 import LayerList from '@arcgis/core/widgets/LayerList'
 import GroupLayer from '@arcgis/core/layers/GroupLayer'
 import ScaleBar from '@arcgis/core/widgets/ScaleBar'
+import Locate from '@arcgis/core/widgets/Locate'
 
 
 esriConfig.apiKey = `${import.meta.env.VITE_ESRI_API_KEY}`
@@ -40,12 +41,23 @@ const displayMap = () => {
             ]
         ],
     })
-    view.constraints.geometry = viewArea
+    //view.constraints.geometry = viewArea
 
     const compass = new Compass({
         view: view,
     })
     view.ui.add(compass, 'top-left')
+
+    const locate  = new Locate({
+        view: view,
+        
+
+        goToOverride: function(view, options) {
+            options.target.scale = view.zoom;
+            return view.goTo(options.target);
+        }
+    });
+    view.ui.add(locate, "top-left");
 
     const loadFeature = async () => {
         map.add(parkArea)
@@ -80,7 +92,12 @@ const displayMap = () => {
         title: "Trasy rowerowe",
         layers: [routeL_K_M_D_T, routeS_W_W, routeT_P_D_W, route123109, routeU_W]
     })
-    map.add(groupLayerRoutes)
+    const layersGroup = new GroupLayer({
+        title: 'Warstwy',
+        layers: [groupLayerRoutes, parkArea]
+    })
+    //map.add(groupLayerRoutes)
+    map.add(layersGroup)
     const scaleBar = new ScaleBar({
         view: view,
         style: 'ruler',

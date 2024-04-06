@@ -23,9 +23,9 @@ const displayMap = () => {
     const view = new MapView({
         map: map,
         container: 'map',
-        zoom: 11,
+        zoom: 10,
         constraints: {
-        minZoom: 11,
+        minZoom: 10,
         maxZoom: 17,
         },
         center: [16.57109135732551, 51.35986770935379]

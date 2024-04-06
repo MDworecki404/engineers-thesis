@@ -36,4 +36,5 @@ export default {
   z-index: 1;
   background-color: rgba(79, 178, 219, 1);
 }
+
 </style>

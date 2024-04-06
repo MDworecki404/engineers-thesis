@@ -19,7 +19,7 @@ export const routeL_K_M_D_T = new FeatureLayer({
     }
 })
 routeL_K_M_D_T.effect = 'bloom(2, 1px, 0)'
-//routeL_K_M_D_T.visible = false
+routeL_K_M_D_T.visible = false
 
 export const routeS_W_W = new FeatureLayer({
     title: 'Szlaki wokół Wołowa',
@@ -38,7 +38,7 @@ export const routeS_W_W = new FeatureLayer({
     }
 })
 routeS_W_W.effect = 'bloom(3, 1px, 0)'
-//routeS_W_W.visible = false
+routeS_W_W.visible = false
 
 export const routeT_P_D_W = new FeatureLayer({
     title: 'Trasa przez dworzec Wołów',
@@ -57,7 +57,7 @@ export const routeT_P_D_W = new FeatureLayer({
     }
 })
 routeT_P_D_W.effect = 'bloom(3, 1px, 0)'
-//routeT_P_D_W.visible = false
+routeT_P_D_W.visible = false
 
 export const route123109 = new FeatureLayer({
     title: 'Trasa rowerowa nr 123109',
@@ -76,7 +76,7 @@ export const route123109 = new FeatureLayer({
     }
 })
 route123109.effect = 'bloom(3, 1px, 0)'
-//route123109.visible = false
+route123109.visible = false
 
 export const routeU_W = new FeatureLayer({
     title: 'Uroczysko wrzosy',
@@ -95,4 +95,4 @@ export const routeU_W = new FeatureLayer({
     }
 })
 routeU_W.effect = 'bloom(3, 1px, 0)'
-//routeU_W.visible = false
+routeU_W.visible = false

@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@arcgis/core": "^4.29.7",
+    "@types/geojson": "^7946.0.14",
     "css-loader": "^6.10.0",
     "gsap": "^3.12.5",
+    "leaflet": "^1.9.4",
     "mapbox-gl": "^3.2.0",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.9",
     "@types/mapbox-gl": "^3.1.0",
     "@types/node": "^20.11.25",
     "@vitejs/plugin-vue": "^5.0.4",

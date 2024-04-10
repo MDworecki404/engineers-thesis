@@ -1,5 +1,5 @@
-<script lang="ts">
-import displayMap from '../scripts/displayMap';
+<script lang="js">
+import displayMap from '../scripts/displayMap.js';
 import gsap from 'gsap';
 
 const coverAnimation = () =>{
@@ -22,7 +22,7 @@ export default {
 #map
 </template>
 <style scoped lang="scss">
-@import url('https://js.arcgis.com/4.29/esri/themes/light/main.css');
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 #map{
 	width: 100vw;
 	height: 100vh;

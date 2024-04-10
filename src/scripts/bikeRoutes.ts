@@ -18,7 +18,7 @@ export const routeL_K_M_D_T = new FeatureLayer({
         content: 'Długość trasy: 60.73km <br><u><a href="{link}">LINK DO TRASY</a></u>',
     }
 })
-routeL_K_M_D_T.effect = 'bloom(2, 1px, 0)'
+//routeL_K_M_D_T.effect = 'bloom(2, 1px, 0)'
 routeL_K_M_D_T.visible = false
 
 export const routeS_W_W = new FeatureLayer({
@@ -37,7 +37,7 @@ export const routeS_W_W = new FeatureLayer({
         content: 'Długość trasy: 14.26km <br><u><a href="{link}">LINK DO TRASY</a></u>',
     }
 })
-routeS_W_W.effect = 'bloom(3, 1px, 0)'
+//routeS_W_W.effect = 'bloom(3, 1px, 0)'
 routeS_W_W.visible = false
 
 export const routeT_P_D_W = new FeatureLayer({
@@ -56,7 +56,7 @@ export const routeT_P_D_W = new FeatureLayer({
         content: 'Długość trasy: 47.63km <br><u><a href="{link}">LINK DO TRASY</a></u>',
     }
 })
-routeT_P_D_W.effect = 'bloom(3, 1px, 0)'
+//routeT_P_D_W.effect = 'bloom(3, 1px, 0)'
 routeT_P_D_W.visible = false
 
 export const route123109 = new FeatureLayer({
@@ -75,7 +75,7 @@ export const route123109 = new FeatureLayer({
         content: 'Długość trasy: 40.97km <br><u><a href="{link}">LINK DO TRASY</a></u>',
     }
 })
-route123109.effect = 'bloom(3, 1px, 0)'
+//route123109.effect = 'bloom(3, 1px, 0)'
 route123109.visible = false
 
 export const routeU_W = new FeatureLayer({
@@ -94,5 +94,5 @@ export const routeU_W = new FeatureLayer({
         content: 'Długość trasy: 22.51km <br><u><a href="{link}">LINK DO TRASY</a></u>',
     }
 })
-routeU_W.effect = 'bloom(3, 1px, 0)'
+//routeU_W.effect = 'bloom(3, 1px, 0)'
 routeU_W.visible = false
